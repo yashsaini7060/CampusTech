@@ -13,8 +13,17 @@
 
 .logos-slide-track {
   display: flex;
-  animation: slide 20s linear infinite;
-  width: fit-content;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .logos-slide-track:hover {

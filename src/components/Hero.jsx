@@ -47,7 +47,6 @@ const Hero = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -58,10 +57,10 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-64px)] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
-      <div className="flex flex-col items-start px-20 w-full bg-white h-full max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-col min-h-[calc(100vh-64px)] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-40 pt-16 md:pt-0">
+      <div className="flex flex-col items-start px-5 md:px-20 w-full bg-white h-full">
         <div className="flex flex-col justify-center h-full w-full">
-          <div className="max-md:max-w-full">
+          <div className="w-full">
             <div className="flex gap-5 max-md:flex-col">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <HeroContent data={slides[currentSlide]} />
@@ -71,12 +70,12 @@ const Hero = () => {
                   loading="lazy"
                   src={slides[currentSlide].image}
                   alt="Educational technology illustration"
-                  className="object-contain grow w-full aspect-[1.34] max-md:mt-10 max-md:max-w-full"
+                  className="object-contain w-full aspect-[1.34] max-md:mt-5 max-md:max-w-full"
                 />
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-10 mt-32 mb-0 w-full max-w-[1328px] max-md:mt-10 max-md:mb-2.5 max-md:max-w-full">
+          <div className="flex flex-wrap gap-10 mt-20 md:mt-32 mb-5 w-full max-w-[1328px]">
             <NavigationControls currentSlide={currentSlide} />
             <SliderControls nextSlide={nextSlide} prevSlide={prevSlide} />
           </div>

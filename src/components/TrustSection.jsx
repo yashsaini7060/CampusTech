@@ -18,22 +18,26 @@ const universities = [
 
 const TrustSection = () => {
   return (
-    <div className=" bg-white px-4 py-16 relative overflow-hidden">
+    <div className="bg-white px-4 py-8 sm:py-16 relative overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <h2 className="text-[56px] leading-tight font-bold mb-24">
+        <h2 className="text-3xl sm:text-4xl md:text-[56px] leading-tight font-bold mb-12 sm:mb-24 text-center sm:text-left">
           The best in the
           <br />
           country <span className="text-[#FF4F17]">trust us</span>
         </h2>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-16 sm:mb-32">
           {stats.map((stat, index) => (
-            <div key={index} className="text-start">
-              <div className={`text-7xl font-bold mb-3 ${stat.color}`}>
+            <div key={index} className="text-center sm:text-start">
+              <div
+                className={`text-4xl sm:text-5xl md:text-7xl font-bold mb-2 sm:mb-3 ${stat.color}`}
+              >
                 {stat.number}
               </div>
-              <div className="text-xl text-black font-medium">{stat.label}</div>
+              <div className="text-base sm:text-lg md:text-xl text-black font-medium">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
@@ -41,17 +45,16 @@ const TrustSection = () => {
         {/* Logo Marquee */}
         <div className="w-full overflow-hidden">
           <div className="logos-slide-track">
-            {/* First set of logos */}
             {[...Array(2)].map((_, setIndex) =>
               universities.map((uni, index) => (
                 <div
                   key={`${setIndex}-${index}`}
-                  className="logo-slide flex-shrink-0 w-64 h-32 flex items-center justify-center mx-8"
+                  className="logo-slide flex-shrink-0 w-40 sm:w-64 h-24 sm:h-32 flex items-center justify-center mx-4 sm:mx-8"
                 >
                   <img
                     src={uni.logo}
                     alt={uni.name}
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain p-2 sm:p-0"
                   />
                 </div>
               ))
